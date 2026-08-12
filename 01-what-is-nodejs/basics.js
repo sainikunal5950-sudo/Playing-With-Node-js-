@@ -1,0 +1,1 @@
+console.log("CHUTIYA HAI TU BHAI ");
