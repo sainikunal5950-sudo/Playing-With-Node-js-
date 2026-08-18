@@ -9,7 +9,6 @@ console.log("Current file:", __filename);
 
 
 const os = require("os");
-
 console.log("operating system ", os.platform());
 console.log("CPU architecture ", os.arch());
 console.log("Number of cpus", os.cpus().length);
