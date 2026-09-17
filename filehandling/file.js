@@ -1,4 +1,4 @@
-const fs = require("fs");   // bhai esme ye fs use hota file ko handle krna ka lai use hota hai bhai 
+// const fs = require("fs");   // bhai esme ye fs use hota file ko handle krna ka lai use hota hai bhai 
 
 
 // sync ka mtlb this was the synchrois call
@@ -22,4 +22,10 @@ const fs = require("fs");   // bhai esme ye fs use hota file ko handle krna ka l
 // });
 
 
-fs.appendFileSync("./test.txt", `${Date.now()}Hey There\n`);
+// fs.appendFileSync("./test.txt", `${Date.now()}Hey There\n`);
+
+
+// console.log("1");
+
+
+const result = fs.read
