@@ -28,9 +28,29 @@ const PORT = 8000;
 //     return res.json(user);
 // })
 
+
+app.use(express.urlencoded({ extended: false }));
+
+
+app.use((req, res, next) => {
+    console.log("Hello from middleware 1");
+    // return res.json({
+    //     msg: "Hello from middleware 1"
+    // })
+    next();
+})
+app.use((req, res, next) => {
+    console.log("Hello from middleware 2");
+    // return res.json({
+    //     msg: "Hello from middleware 1"
+    // })
+    next();
+})
+
 app.get("/api/users", ((req, res) => {
     return res.json(users);
 }))
+
 
 // app.post("/api/users", ((req, res) => {
 
