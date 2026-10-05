@@ -29,41 +29,48 @@ const PORT = 8000;
 // })
 
 
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 
-app.use((req, res, next) => {
-    console.log("Hello from middleware 1");
-    // return res.json({
-    //     msg: "Hello from middleware 1"
-    // })
-    next();
-})
-app.use((req, res, next) => {
-    console.log("Hello from middleware 2");
-    // return res.json({
-    //     msg: "Hello from middleware 1"
-    // })
-    next();
-})
+// app.use((req, res, next) => {
+//     console.log("Hello from middleware 1");
+//     // return res.json({
+//     //     msg: "Hello from middleware 1"
+//     // })
+//     next();
+// })
+// app.use((req, res, next) => {
+//     console.log("Hello from middleware 2");
+//     // return res.json({
+//     //     msg: "Hello from middleware 1"
+//     // })
+//     next();
+// })
 
-app.get("/api/users", ((req, res) => {
-    return res.json(users);
-}))
+// app.get("/api/users", ((req, res) => {
+//     return res.json(users);
+// }))
 
 
 // app.post("/api/users", ((req, res) => {
 
 // }))
 
-app.post("/api/users", ((req, res) => {
-    const body = req.body;
-    console.log(body);
-    users.push({ ...body, id: users.length + 1 });
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-        return res.json({ status: "pending" });
-    })
+// app.post("/api/users", ((req, res) => {
+//     const body = req.body;
+//     console.log(body);
+//     users.push({ ...body, id: users.length + 1 });
+//     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+//         return res.json({ status: "pending" });
+//     })
 
+// }))
+
+
+app.get("/api/users", ((req, res) => {
+    res.setHeader("X-MyName", "Piyush Garg");   // agr app aga x-name lga de ta ho toh voh ek custom header bn jata hai bhai 
+
+    return res.json(users);
 }))
 
 app.listen(PORT, () => {
